@@ -7,6 +7,7 @@ import com.playtomic.tests.wallet.service.StripeService;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 
 import java.math.BigDecimal;
@@ -19,7 +20,7 @@ import java.net.URI;
  */
 public class StripeServiceTest {
 
-    URI testUri = URI.create("http://how-would-you-test-me.localhost");
+    URI testUri = URI.create("https://sandbox.playtomic.io/v1/stripe-simulator/charges");
     StripeService s = new StripeService(testUri, testUri, new RestTemplateBuilder());
 
     @Test

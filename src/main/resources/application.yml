@@ -15,5 +15,6 @@ spring:
     host: localhost
     port: 0
     database: playtomic
+de.flapdoodle.mongodb.embedded.version: 6.0.5
 stripe.simulator.charges-uri: http://localhost:9999
 stripe.simulator.refunds-uri: http://localhost:9999
