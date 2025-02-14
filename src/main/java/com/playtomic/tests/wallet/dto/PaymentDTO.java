@@ -1,5 +1,6 @@
 package com.playtomic.tests.wallet.dto;
 
+import com.playtomic.tests.wallet.entity.ErrorType;
 import com.playtomic.tests.wallet.entity.TransactionStatus;
 import com.playtomic.tests.wallet.entity.TransactionType;
 import lombok.Builder;
@@ -7,18 +8,14 @@ import lombok.Data;
 import org.bson.types.ObjectId;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.util.List;
 
 @Data
 @Builder(setterPrefix = "set")
-public class TransactionDTO {
-    private ObjectId id;
-    private String objectId;
-    private ObjectId walletId;
-    private String walletObjectId;
-    private String paymentId;
-    private BigDecimal amount;
-    private Date date;
-    private TransactionType transactionType;
+public class PaymentDTO {
+
     private TransactionStatus transactionStatus;
+    private TransactionType transactionType;
+    private String id;
+    private ErrorType errorType;
 }

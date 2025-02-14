@@ -12,6 +12,7 @@ import java.util.List;
 public class WalletDTO {
 
     private ObjectId id;
+    private String objectId;
     private BigDecimal balance;
     private List<TransactionDTO> transactions;
 }

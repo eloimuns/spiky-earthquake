@@ -1,6 +1,6 @@
-Feature: Wallet Management
+Feature: Get Wallet Management
 
-  Scenario Outline: Get existing wallet without transactions
+  Scenario Outline: Get existing wallet dto without transactions
     Given a wallet with ID "<id>" and balance <balance> with transactions 0
     When I request the wallet with ID "<id>"
     Then I should receive a wallet with ID "<id>" and balance <balance>
@@ -11,7 +11,7 @@ Feature: Wallet Management
       | 67af5a086852cfcb12a59198 | 10      |
       | 67af5a0eeef9f8a571a058e4 | 15      |
 
-  Scenario Outline: Get existing wallet with transactions
+  Scenario Outline: Get existing wallet dto with transactions
     Given a wallet with ID "<id>" and balance <balance> with transactions <transactions>
     When I request the wallet with transactions with ID "<id>"
     Then I should receive a wallet with ID "<id>" and balance <balance>

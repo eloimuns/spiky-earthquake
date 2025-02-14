@@ -2,10 +2,8 @@ package com.playtomic.tests.wallet.service;
 
 import com.playtomic.tests.wallet.dto.TransactionDTO;
 import com.playtomic.tests.wallet.repository.TransactionRepository;
-import com.playtomic.tests.wallet.utils.TransactionDTOUtils;
+import com.playtomic.tests.wallet.utils.TransactionUtils;
 import org.bson.types.ObjectId;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +20,11 @@ public class TransactionService {
     }
 
     public List<TransactionDTO> getTransactionsById(ObjectId walletId) {
-        return TransactionDTOUtils.convertToDTOList(transactionRepository.findByWalletId(walletId));
+        return TransactionUtils.convertToDTOList(transactionRepository.findByWalletId(walletId));
+    }
+
+    public void createTopUpTransaction(TransactionDTO transactionDTO) {
+        transactionRepository.save(TransactionUtils.convertToEntity(transactionDTO));
     }
 
 }

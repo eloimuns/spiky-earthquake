@@ -14,4 +14,9 @@ public class Wallet {
     @Id
     private ObjectId id;
     private BigDecimal balance;
+
+    public void addBalance(BigDecimal balance) {
+        this.balance = this.balance.add(balance);
+    }
+
 }

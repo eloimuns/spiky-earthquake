@@ -2,10 +2,12 @@ package com.playtomic.tests.wallet.service.impl;
 
 import com.playtomic.tests.wallet.dto.TransactionDTO;
 import com.playtomic.tests.wallet.dto.WalletDTO;
+import com.playtomic.tests.wallet.entity.Transaction;
 import com.playtomic.tests.wallet.repository.TransactionRepository;
 import com.playtomic.tests.wallet.repository.WalletRepository;
 import com.playtomic.tests.wallet.service.TransactionService;
 import com.playtomic.tests.wallet.service.WalletService;
+import com.playtomic.tests.wallet.utils.TransactionUtils;
 import fixture.TransactionFixture;
 import fixture.WalletFixture;
 import org.bson.types.ObjectId;
@@ -51,5 +53,13 @@ public class TransactionServiceTest {
         assertNotNull(result);
         assertEquals(0, result.size());
         verify(transactionRepository, times(1)).findByWalletId(WalletFixture.WALLET_ID);
+    }
+
+    @Test
+    void testCreateTopUpTransaction_ShouldSaveTransaction() {
+        Transaction transactionEntity = TransactionFixture.buildSuccessPaymentTransaction();
+        transactionService.createTopUpTransaction(TransactionUtils.convertToDTO(transactionEntity));
+
+        verify(transactionRepository, times(1)).save(transactionEntity);
     }
 }
