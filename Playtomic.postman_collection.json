@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "e8741516-e296-4e65-877a-1b0df527d792",
+		"name": "Playtomic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30088099"
+	},
+	"item": [
+		{
+			"name": "Create Empty Wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/wallet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Wallet By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/wallet/67af676d871bf73f9e2af8fc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"wallet",
+						"67af676d871bf73f9e2af8fc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Wallet By Id - Detailed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/wallet/67af676d871bf73f9e2af8fc/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"wallet",
+						"67af676d871bf73f9e2af8fc",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Up Wallet Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 200,\r\n    \"cardNumber\": \"4242 4242 4242 4242\",\r\n    \"expireMonth\": \"12\",\r\n    \"expireYear\": \"30\",\r\n    \"cvc\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/wallet/67af676d871bf73f9e2af8fc/top-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"wallet",
+						"67af676d871bf73f9e2af8fc",
+						"top-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Up Wallet Small Amount Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 5,\r\n    \"cardNumber\": \"4242 4242 4242 4242\",\r\n    \"expireMonth\": \"12\",\r\n    \"expireYear\": \"30\",\r\n    \"cvc\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/wallet/67af676d871bf73f9e2af8fc/top-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"wallet",
+						"67af676d871bf73f9e2af8fc",
+						"top-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top Up Wallet Invalid Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 5,\r\n    \"cardNumber\": \"4242 4242 4242 4242\",\r\n    \"expireMonth\": \"12\",\r\n    \"expireYear\": \"30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/wallet/67af676d871bf73f9e2af8fc/top-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"wallet",
+						"67af676d871bf73f9e2af8fc",
+						"top-up"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
